@@ -13,13 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*
+// Auth::routes();
+Auth::routes(['reset' => false]);
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/parques');
 });
-*/
 
-Auth::routes();
+Route::group(['middleware' => ['auth']], function () {
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/parques', [App\Http\Controllers\parques\ParquesController::class, 'index'])->name('parques');
+    // Route::get('/parques/obtain_data/{id_register}', [App\Http\Controllers\parques\ParquesController::class, 'obtainData'])->name('data_sensores');
+    Route::get('/parques/obtain_data_info/', [App\Http\Controllers\parques\ParquesController::class, 'obtainData_info'])->name('data_sensores');
+    Route::get('/parques/obtain_data_schedule/', [App\Http\Controllers\parques\ParquesController::class, 'obtainDataSchedule'])->name('data_schedule');
+    Route::get('/parques/obtain_data_mqqt/', [App\Http\Controllers\parques\ParquesController::class, 'obtainDataMQTT_Table'])->name('data_mqtt');
+    Route::post('/parques/save_data/', [App\Http\Controllers\parques\ParquesController::class, 'store'])->name('save_data');
+
+    Route::get('/logout_session' ,[App\Http\Controllers\parques\ParquesController::class,'logout_session'])->name('logout_session');
+}); 
+
+Route::get('phpmyinfo', function () { phpinfo(); })->name('phpmyinfo');

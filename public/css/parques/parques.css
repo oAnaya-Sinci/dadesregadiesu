@@ -1,0 +1,186 @@
+progress {
+   width: 39%;
+   border: 0;
+   height: 15px;
+   border-radius: 6px;
+   /* border-top-right-radius: 5px;
+   border-bottom-right-radius: 5px; */
+}
+progress::-webkit-progress-bar {
+   border: 0;
+   height: 15px;
+   border-radius: 6px;
+   /* border-top-right-radius: 5px;
+   border-bottom-right-radius: 5px; */
+   background-color:lightblue;
+}
+
+progress::-webkit-progress-value {
+   border: 0;
+   height: 15px;
+   border-radius: 6px;
+   /* border-top-right-radius: 5px;
+   border-bottom-right-radius: 5px; */
+   background-color:green;
+}
+
+progress.medium::-webkit-progress-value {
+   border: 0;
+   height: 15px;
+   border-radius: 6px;
+   /* border-top-right-radius: 5px;
+   border-bottom-right-radius: 5px; */
+   background-color:rgb(232, 232, 4);
+}
+
+progress.low_medium::-webkit-progress-value {
+   border: 0;
+   height: 15px;
+   border-radius: 6px;
+   /* border-top-right-radius: 5px;
+   border-bottom-right-radius: 5px; */
+   background-color:orange;
+}
+
+progress.low::-webkit-progress-value {
+   border: 0;
+   height: 15px;
+   border-radius: 6px;
+   /* border-top-right-radius: 5px;
+   border-bottom-right-radius: 5px; */
+   background-color:red;
+}
+
+table thead{
+   font-size: 13px;
+   white-space: nowrap;
+}
+
+table tbody{
+   font-size: 12px;  
+}
+
+.id_progam{
+   text-align: center;
+}
+
+.weekDays{
+   display: flex;
+   justify-content: space-evenly;
+}
+
+.weekDays .form-check.form-switch{
+   display: flex;
+   flex-direction: column;
+   align-items: baseline;
+}
+
+.horario_riego.form-group{
+   display: flex;
+   gap: 1em;
+}
+
+#WS_data_table .form-check-input,
+#WS_data_table_2 .form-check-input{
+   width: 1.5em !important;
+   height: 1.5em !important;
+}
+
+.form-check-input{
+   width: 4.2em !important;
+   height: 2.2em;
+}
+
+.manual_program{
+
+   display: flex;
+   flex-direction: column;
+   align-items: baseline;
+   gap: 0.5em;
+   padding-left: 0.5em;
+}
+
+.electroValves .form-switch label{
+
+   white-space: nowrap;
+   margin-left: -1.5rem;
+}
+
+.rowSensors{
+
+   margin-top: -6rem;
+}
+
+/* @media screen and (max-width: 720px) and (orientation: portrait) { */
+@media screen and (max-device-width: 800px) and (orientation: portrait) {
+
+   /* body{
+      background-color: red;
+   } */
+
+   /* .cardSB{
+      display: none;
+   } */
+   
+   .cardMap,
+   .cardWS,
+   .cardSB,
+   .cardIrrigate{
+      margin-bottom: 1.5rem;
+   }
+
+   .cardEV .electroValves .row .col-md-3{
+      width: 25%;
+   }
+
+   .accionsParks{
+      
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+
+      padding: 0.5rem;
+
+      .col-md-6{
+         width: 50% !important;
+      }
+   }
+
+   .cardWS .card-body,
+   .cardWS2 .card-body,
+   .cardWS_Schedule .card-body{
+      overflow-x: scroll;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x proximity;
+   }
+
+   .cardIrrigate .card-body .row:nth-child(1) .col-md-10,
+   .cardIrrigate .card-body .row:nth-child(3) .col-md-4{
+      margin-top: 1.5rem;
+   }
+
+   .weekDays{
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-left: -1.7rem;
+   }
+
+   progress {
+      width: 50%;
+   }
+ }    
+
+
+@media screen and (max-device-width: 1280px) and (orientation: landscape) {
+
+   /* body{
+      background-color: blue;
+   } */
+
+   #myTabContent{
+      width: 93rem;
+      overflow-x: scroll;
+      overflow-y: hidden;
+   }
+}

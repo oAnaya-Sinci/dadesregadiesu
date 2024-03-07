@@ -18,7 +18,7 @@
          <button class="nav-link" id="schedules-tab" data-bs-toggle="tab" data-bs-target="#schedules" type="button"
             role="tab" aria-controls="schedules" aria-selected="false">Schedules</button>
          <button class="nav-link" id="Caudalimetro-tab" data-bs-toggle="tab" data-bs-target="#Caudalimetro" type="button"
-            role="tab" aria-controls="Caudalimetro" aria-selected="false">Caudalimetro</button>
+            role="tab" aria-controls="Caudalimetro" aria-selected="false">Plaza mayor</button>
       </div>
    </nav>
    <!-- Modulo de pestañas para parques -->
@@ -37,6 +37,79 @@
                            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d231.81592112085!2d2.087172693865377!3d41.61728831550894!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses-419!2smx!4v1701409499988!5m2!1ses-419!2smx"
                            width="600" height="318" style="border:0;" allowfullscreen="" loading="lazy"
                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-md-3 module_encolados">
+
+               <!-- Aqui va el otro segmento -->
+               <div class="card shadow cardSB mb-4 noDataNoShow">
+                  <div class="card-header"><strong>{{ __('Encolados') }}</strong></div>
+
+                  <div class="card-body encolados pt-0">
+                     
+                     <table class="table table-striped tableEncolados text-center mb-0">
+                        <thead>
+                           <tr>
+                              <th>WS</th>
+                              <th>EV</th>
+                              <th>des de</th>
+                              <th>durant</th>
+                              <th>humitat</th>
+                              <!-- <th></th> -->
+                           </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+
+                     </table>
+
+                  </div>
+               </div>
+
+               <div class="card shadow cardEV">
+                  <div class="card-header"><strong>{{ __('EV') }}</strong></div>
+
+                  <div class="card-body electroValves pb-4">
+
+                     <div class="row mb-12 ms-n1">
+                        <div class="col-md-3">
+
+                           <div class="form-check form-switch d-flex flex-column align-items-start">
+                              <label class="form-check-label pt-2" for="flexSwitchCheckDefault ms-n4">EV-1</label>
+                              <input class="form-check-input valve1 ev1" type="checkbox" value="EV1" checked>
+                           </div>
+
+                        </div>
+                        <div class="col-md-3">
+
+                           <div class="form-check form-switch d-flex flex-column align-items-start">
+                              <label class="form-check-label pt-2" for="flexSwitchCheckDefault">EV-2</label>
+                              <input class="form-check-input valve2 ev2" type="checkbox" value="EV2">
+                           </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                           <div class="form-check form-switch d-flex flex-column align-items-start">
+                              <label class="form-check-label pt-2" for="flexSwitchCheckDefault">EV-3</label>
+                              <input class="form-check-input valve3 ev3" type="checkbox" value="EV3">
+                           </div>
+
+                        </div>
+                        <div class="col-md-3">
+
+                           <div class="form-check form-switch d-flex flex-column align-items-start">
+                              <label class="form-check-label pt-2" for="flexSwitchCheckDefault">EV-4</label>
+                              <input class="form-check-input valve4 ev4" type="checkbox" value="EV4">
+                           </div>
+
+                        </div>
+
                      </div>
                   </div>
                </div>
@@ -90,82 +163,11 @@
                </div>
             </div>
 
-            <div class="col-md-3">
-               <div class="card shadow cardEV">
-                  <div class="card-header"><strong>{{ __('EV') }}</strong></div>
-
-                  <div class="card-body electroValves pb-4">
-
-                     <div class="row mb-12 ms-n1">
-                        <div class="col-md-3">
-
-                           <div class="form-check form-switch d-flex flex-column align-items-start">
-                              <label class="form-check-label pt-2" for="flexSwitchCheckDefault ms-n4">EV-1</label>
-                              <input class="form-check-input valve1 ev1" type="checkbox" value="EV1" checked>
-                           </div>
-
-                        </div>
-                        <div class="col-md-3">
-
-                           <div class="form-check form-switch d-flex flex-column align-items-start">
-                              <label class="form-check-label pt-2" for="flexSwitchCheckDefault">EV-2</label>
-                              <input class="form-check-input valve2 ev2" type="checkbox" value="EV2">
-                           </div>
-
-                        </div>
-
-                        <div class="col-md-3">
-
-                           <div class="form-check form-switch d-flex flex-column align-items-start">
-                              <label class="form-check-label pt-2" for="flexSwitchCheckDefault">EV-3</label>
-                              <input class="form-check-input valve3 ev3" type="checkbox" value="EV3">
-                           </div>
-
-                        </div>
-                        <div class="col-md-3">
-
-                           <div class="form-check form-switch d-flex flex-column align-items-start">
-                              <label class="form-check-label pt-2" for="flexSwitchCheckDefault">EV-4</label>
-                              <input class="form-check-input valve4 ev4" type="checkbox" value="EV4">
-                           </div>
-
-                        </div>
-
-                     </div>
-                  </div>
-               </div>
-
-               <div class="card shadow mt-4 cardHours" style="height: 12.7rem;">
-                  <div class="card-header"><strong>{{ __("registre d'hores") }}</strong></div>
-
-                  <div class="card-body pt-0">
-
-                     <table class="table table-striped tableHoursIrrigate text-center">
-                        <thead>
-                           <tr>
-                              <th>des de</th>
-                              <th>durant</th>
-                              <th>humitat</th>
-                              <th></th>
-                           </tr>
-                        </thead>
-
-                        <tbody>
-                        </tbody>
-
-                     </table>
-
-                  </div>
-               </div>
-
-            </div>
          </div>
 
-         <!-- <div class="row pt-4"> -->
-         <!-- <div class="row justify-content-end pt-4 rowSensors"> -->
-         <div class="row justify-content pt-4 justify-content-end">
+         <div class="row justify-content justify-content-end row2">
 
-         <div class="col-md-9" id="irrigate_conf">
+         <div class="col-md-6" id="irrigate_conf">
                <div class="card shadow cardIrrigate">
                   <div class="card-header"><strong>{{ __('Configuración de riego') }}</strong></div>
 
@@ -259,6 +261,31 @@
                   </div>
                   
             </div>
+         </div>
+
+         <div class="col-md-3">
+            <div class="card shadow cardHours cardSB registroHoras">
+                  <div class="card-header"><strong>{{ __("registre d'hores") }}</strong></div>
+
+                  <div class="card-body pt-0">
+
+                     <table class="table table-striped tableHoursIrrigate text-center">
+                        <thead>
+                           <tr>
+                              <th>des de</th>
+                              <th>durant</th>
+                              <th>humitat</th>
+                              <th></th>
+                           </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+
+                     </table>
+
+                  </div>
+               </div>
          </div>
 
             <div class="col-md-3">
@@ -361,7 +388,7 @@
                <div class="card shadow cardWS_Schedule">
                   <div class="card-header"><strong>{{ __('WS Schedule') }}</strong></div>
 
-                  <div class="card-body"">
+                  <div class="card-body">
                      <table id="WS_data_schedule" class="table table-striped">
                         <thead class="text-center">
                            <tr>
@@ -399,34 +426,38 @@
             
          <div class="row pt-4">
             <div class="col-md-6">
-               <div class="card shadow cardWS2">
-                  <div class="card-header"><strong>{{ __('Caudalimetro') }}</strong></div>
+               <div class="card shadow cardWS">
+                  <div class="card-header"><strong>{{ __('Grafica') }}</strong></div>
 
                   <div class="card-body">
                   
-                     <iframe src="https://sincisp.dyndns.org/d-solo/ff6467ab-ff4b-44c0-9cba-f7336456a0d9/caudalimetro-plaza-mayor?orgId=1&from=1707419181121&to=1708023981121&panelId=1" height="250" frameborder="0" style="width: 100%;"></iframe>
+                     <!-- <iframe src="https://sincisp.dyndns.org/d-solo/ff6467ab-ff4b-44c0-9cba-f7336456a0d9/caudalimetro-plaza-mayor?orgId=1&from=now-7d&to=now&panelId=1" height="250" frameborder="0" style="width: 100%;"></iframe> -->
+                        <!-- <iframe src="https://sincisp.dyndns.org/d-solo/ffcc4c79-d658-4a18-bb52-133ecac244aa/consumo-plaza-mayor?orgId=1&from=1694101113402&to=1709825913402&panelId=2" width="100%" height="260" frameborder="0"></iframe> -->
+                        <iframe src="https://sincisp.dyndns.org/d-solo/ffcc4c79-d658-4a18-bb52-133ecac244aa/consumo-plaza-mayor?orgId=1&from=1694101113402&to=now&panelId=2" width="100%" height="260" frameborder="0"></iframe>
+                     <!-- <iframe src="https://sincisp.dyndns.org/d/ff6467ab-ff4b-44c0-9cba-f7336456a0d9/caudalimetro-plaza-mayor?orgId=1&from=1705872286183&to=1708464286183&viewPanel=1" height="280" frameborder="0" style="width: 100%;"></iframe> -->
 
                   </div>
                </div>
             </div>
             
             <div class="col-md-6">
-               <div class="card shadow cardWS2">
-                  <div class="card-header"><strong>{{ __('Caudalimetro') }}</strong></div>
+               <div class="card shadow cardWS">
+                  <div class="card-header"><strong>{{ __('Valores actuales') }}</strong></div>
 
                   <div class="card-body">
 
-                        <table class="table">
+                        <table id="tableDataMQTT" class="table">
                            <thead>
                               <tr>
                                  <th>Battery</th>
-                                 <th>Counter</th>
-                                 <th>Alarm 1</th>
-                                 <th>Alarm 2</th>
+                                 <th>Count</th>
+                                 <th>Status_ST1</th>
+                                 <th>Status_ST2</th>
+                                 <th>Unit</th>
+                                 <th>Absolute Meter Counter</th>
                               </tr>
                            </thead>
-                           <tbody>
-
+                           <tbody class="text-center">
                            </tbody>
                         </table>
 

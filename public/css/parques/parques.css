@@ -58,6 +58,11 @@ table thead{
 
 table tbody{
    font-size: 12px;  
+   white-space: nowrap;
+}
+
+.noDataNoShow{
+   display: none;
 }
 
 .id_progam{
@@ -111,6 +116,29 @@ table tbody{
    margin-top: -6rem;
 }
 
+#tableDataMQTT thead {
+
+   white-space: nowrap;
+   text-align: center;
+}
+
+.encolados{
+
+   height: 17.5vh;
+   overflow-x: hidden;
+   overflow-y: scroll;
+}
+
+.registroHoras{
+
+   height: 33vh;
+}
+
+.row2{
+
+   padding-top: 1.5rem;
+}
+
 /* @media screen and (max-width: 720px) and (orientation: portrait) { */
 @media screen and (max-device-width: 800px) and (orientation: portrait) {
 
@@ -121,9 +149,17 @@ table tbody{
    /* .cardSB{
       display: none;
    } */
+
+   .cardIrrigate .card-body .weekDays .form-switch:nth-child(5),
+   .cardIrrigate .card-body .weekDays .form-switch:nth-child(6),
+   .cardIrrigate .card-body .weekDays .form-switch:nth-child(7){
+
+      margin-top: 1rem;
+   }
    
    .cardMap,
    .cardWS,
+   .cardEV,
    .cardSB,
    .cardIrrigate{
       margin-bottom: 1.5rem;
@@ -168,6 +204,18 @@ table tbody{
 
    progress {
       width: 50%;
+   }
+
+   .encolados{
+
+      height: 35vh;
+      overflow-x: hidden;
+      overflow-y: scroll;
+   }
+   
+   .registroHoras{
+   
+      height: 25vh;
    }
  }    
 

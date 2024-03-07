@@ -3,3 +3,34 @@
 *{
    font-family: 'Poppins', sans-serif;
 }
+
+.container .navbar-brand:first-child{
+   padding: 0;
+   margin: -0.1rem -8rem 0 0; 
+}
+
+.container .navbar-brand:nth-child(2){
+   padding: 0;
+}
+
+.navbar-brand{
+   width: 11%;
+   white-space: normal;
+   font-size: 15px;
+}
+
+
+@media screen and (max-device-width: 800px) and (orientation: portrait) {
+
+   .container .navbar-brand:first-child {
+      padding: 0;
+      margin: -0.1rem -17rem 0 10px;
+   }   
+
+   .navbar-brand{
+
+      width: 40%;
+      white-space: normal;
+      font-size: 15px;
+   }
+}

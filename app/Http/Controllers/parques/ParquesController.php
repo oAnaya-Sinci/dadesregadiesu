@@ -7,7 +7,7 @@ use App\Models\Parques\StatusSB;
 use App\Models\Parques\StatusWS;
 use App\Models\Parques\Schedule;
 use App\Models\Parques\ScheduleWS;
-use App\Models\Parques\MQTT_data;
+use App\Models\Parques\MQTT_Data;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
@@ -31,7 +31,7 @@ class ParquesController extends Controller
         return view('parques.app', compact('SB_data', 'WS_data', 'WS_Schedule', 'VoltBattery'));
     }
 
-    public function obtainData(){
+    public function obtainData_info(){
         $SB_data = StatusSB::all();
         $WS_data = StatusWS::whereNotIn('id_ws', [1, 2])->get();
         $VoltBattery = 3.4;
@@ -43,16 +43,36 @@ class ParquesController extends Controller
 
     public function obtainIrrigateData($id_register){
 
-        $irrigate_Data = Schedule::where('id_register', $id_register)->get();
+        // $irrigate_Data = Schedule::where('id_register', $id_register)->get();
+        $irrigate_Data = Schedule::where('id_register', 'LIKE', $id_register)->where('readed', '0')->get();
 
         return json_decode( $irrigate_Data );
+    }
+
+    public function obtainDataSchedule(){
+
+        $dataSchedule = Schedule::select('data_schedules')->where('readed', '0')->orderby('created_at', 'DESC')->get();
+        // $dataSchedule = Schedule::select('data_schedules')->where('readed', '1')->where('id', '26')->orderby('created_at', 'DESC')->get();
+        // $dataSchedule = Schedule::select('data_schedules')->where('readed', '1')->orderby('created_at', 'DESC')->get();
+
+        return json_decode($dataSchedule);
     }
 
     public function obtainDataMQTT_Table(){
 
       $dataPayload = (MQTT_data::select('payload')->where('DeviceName', 'LIKE', 'plazamayor%')->orderby('timefromttnUTC', 'DESC')->first())->payload;
+      $decodedPayload = json_decode($dataPayload)->uplink_message->decoded_payload;
 
-      return $dataPayload;
+      $newJson = [
+        "Battery" => $decodedPayload->Battery,
+        "Count" => $decodedPayload->Count,
+        "Error_Status_ST1" => $decodedPayload->Error_Status_ST1,
+        "Error_Status_ST2" => $decodedPayload->Error_Status_ST2,
+        "Unit" => $decodedPayload->Unit,
+        "absolute_meter_counter" => $decodedPayload->absolute_meter_counter
+      ];
+
+      return $newJson;
     }
 
     /**ex
